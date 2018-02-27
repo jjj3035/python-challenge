@@ -11,7 +11,7 @@ revenue = []
 for file in files:
     with open(file, newline ='') as csvfile:
         csvreader = csv.reader(csvfile, delimiter =',')
-        csvreader.__next__()
+        next(csvreader, None)
         for row in csvreader:
             months.append(row[0])
             revenue.append(int(row[1]))
